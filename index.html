@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sota de Oros</title>
+    <!-- build:css css/styles.css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />    
+    <!-- endbuild -->
+
+</head>
+<body>
+    <div ng-if="userSignedIn === true">
+    <!--<div ng-if="true">-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Sota de Oros</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!/home">Home</a>
+                    </li>                    
+                </ul>
+                <a class="btn btn btn-primary my-2 my-sm-0" href="#!/login">Logout</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <div ng-view></div>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.min.js" charset="utf-8"></script>    
+    <!-- endbuild -->
+
+    <!-- build:js scripts/scripts.js -->
+    <!-- app module initialization -->
+    <script src="app/app.module.js" charset="utf-8"></script>    
+    <!-- routes -->
+    <script src="app/app.routes.js" charset="utf-8"></script>
+    <!-- services -->
+    <script src="app/services/batch.service.js" charset="utf-8"></script>
+    <script src="app/services/authentication.service.js" charset="utf-8"></script>
+    <script src="app/services/flash.service.js" charset="utf-8"></script>
+    <script src="app/services/user.service.js" charset="utf-8"></script>
+    <script src="app/services/batch.service.js" charset="utf-8"></script>
+	  <script src="app/services/product.service.js" charset="utf-8"></script>
+	  <script src="app/services/tiposCuentaProducto.service.js" charset="utf-8"></script>
+	  <script src="app/services/tiposSuc.service.js" charset="utf-8"></script>
+	  <script src="app/services/catalogo.service.js" charset="utf-8"></script>
+	  <script src="app/services/tiposDocumento.service.js" charset="utf-8"></script>
+    <script src="app/shared/modal/simpleGlobalModal.js" charset="utf-8"></script>
+    <!-- components -->
+    <script src="app/components/user/user.service.local-storage.js" charset="utf-8"></script>
+    <script src="app/components/home/home.controller.js" charset="utf-8"></script>
+    <script src="app/components/register/register.controller.js" charset="utf-8"></script>
+    <script src="app/components/login/login.controller.js" charset="utf-8"></script>
+    <script src="app/components/batch/batch-search.controller.js" charset="utf-8"></script>
+    <!-- endbuild -->
+</body>
+</html>
